@@ -1,0 +1,15 @@
+.BookContainer{
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+}
+.editOption{
+    order:2;
+    margin: 15px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.editClick{
+    width: 50%;
+}

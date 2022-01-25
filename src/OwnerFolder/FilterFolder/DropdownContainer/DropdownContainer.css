@@ -1,0 +1,14 @@
+.DropdownContainer{
+    width: 145px;
+    position: relative;
+
+
+    margin-left: auto;
+    margin-right: 25px;
+}
+
+@media (min-width:721px) {
+    .DropdownContainer{
+        margin-top: 25px;
+    }
+}

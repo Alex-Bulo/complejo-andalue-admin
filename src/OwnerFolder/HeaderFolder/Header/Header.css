@@ -1,0 +1,16 @@
+.Header{
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    height: 3em;
+    width: 100%;
+    padding: 25px;
+
+    background-color: var(--bkgColor-header);
+}
+
+.header-logo{
+    color: #e5e5e5;
+}

@@ -1,0 +1,38 @@
+.HomeContainer{
+    padding: 25px;
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+}
+.menuContainer{
+    width: 100%;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+
+}
+.homePreview{
+    width: 100%;
+}
+.na{
+    width: 100px;
+    height: 100px;
+    background-color: dimgrey;
+}
+
+@media (min-width:1024px) {
+    .HomeContainer{
+        height: 100%;
+        align-items: flex-start;
+    }
+    .menuContainer{
+        width: 50%;
+        margin-top: 35px;
+    }
+    .homePreview{
+        width: 50%;
+        
+    }
+}

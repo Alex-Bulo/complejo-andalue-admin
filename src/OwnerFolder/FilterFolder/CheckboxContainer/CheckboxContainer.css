@@ -1,0 +1,57 @@
+.CheckboxContainer{
+    display: flex;
+    flex-direction: column;
+
+    border: none;
+    border-radius: 15px;
+    box-shadow: 2px 2px 11px 3px rgba(0, 77, 77, 0.2);
+}
+.Checkbox-selected{
+    position: relative;
+
+    display: flex;
+    flex-direction: row;
+
+}
+.closeIcon{
+    position: absolute;
+    right: 10px;
+    top: 4px;
+    font-size: 20px;
+}
+.selectedBooking,
+.selectedCabin{
+    margin:20px 10px;
+    font-weight: 500;
+}
+.selectedCabin{
+    color: var(--fontColor-accent)
+}
+.dropdownIcon{
+    position: absolute;
+    right: 14px;
+    bottom: 3px;
+    font-size: 20px;
+}
+.Checkbox-options,
+.contentContainer{ 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.Checkbox-options{
+    margin: 10px;
+}
+.contentContainer{
+    width: 100%;
+    margin-bottom: 10px;
+}
+.optionCabins{
+    padding-bottom: 5px;
+    border-bottom: 1px dashed var(--lineDivider-color);
+}
+.optionBookings{
+    max-height: 400px;
+    overflow-y: scroll;
+    
+}

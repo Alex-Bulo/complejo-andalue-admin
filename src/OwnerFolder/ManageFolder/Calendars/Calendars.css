@@ -1,0 +1,14 @@
+.Calendars{
+    width: 100%;
+    height: 84vh;
+
+    margin-top: 15px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+@media (min-width:721px) {
+    .Calendars{
+        padding-left: 0;
+    }
+}

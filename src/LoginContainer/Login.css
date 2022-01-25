@@ -1,0 +1,16 @@
+.Login{
+    width: 100%;
+
+    margin: 25px;
+}
+
+.form-login{
+    height: 100%;
+    padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+}
+

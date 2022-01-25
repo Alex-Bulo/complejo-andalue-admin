@@ -1,24 +1,36 @@
-import logo from './logo.svg';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { useAuth } from './context/AuthContext';
 import './App.css';
+import ProtectedRoute from './protectedRoutes/ProtectedRoute';
+import LoginContainer from './LoginContainer/LoginContainer';
+import OwnerSite from './OwnerFolder/OwnerSite';
+import Atention from './AtentionFolder/At';
 
 function App() {
+  const {preference} = useAuth()
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+    <BrowserRouter>
+        <div className={`App ${preference.theme}`}>            
+              <Switch>
+                <Route exact path='/login' >
+                  <LoginContainer />
+                </Route>
+                
+                <Route exact path='/at' >
+                  <Atention/>
+                </Route>
+                
+
+                <Route path='/*' >
+                  <ProtectedRoute component={OwnerSite}/>
+                </Route>
+              
+              </Switch> 
+          
+        </div>
+    </BrowserRouter>    
+
   );
 }
 
