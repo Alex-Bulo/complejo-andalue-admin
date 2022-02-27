@@ -4,13 +4,13 @@ import { Link } from "react-router-dom";
 import './CalendarSnippet.css'
 
 function CalendarSnippet({cabins}) {
-    console.log(cabins);
+
     return(
         <div className='m2 CalendarSnippet'>
             <header className="snippet-header"> Próximas fechas disponibles</header>
             <main className="snippet-content">
                 {cabins.map(cabin => {
-                    const formInfo = {info:{startDate:cabin.nextAvail.startDate,endDate:cabin.nextAvail.endDate, cabinID: cabin.id}}
+                    const formInfo = {info:{startDate:cabin.nextAvail.startDate,endDate:cabin.nextAvail.endDate, cabinID: cabin.id, cabin:cabin.name, userName:null}}
                     return(
                         <Link   key={cabin.cabinID} className="CTAsecondary-active snippet-link"
                                 to={{pathname:'/manage/bookings',state: formInfo}} >

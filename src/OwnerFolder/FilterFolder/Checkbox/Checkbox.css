@@ -1,6 +1,7 @@
 .Checkbox{
+    margin: auto;
     padding: 10px 0;
-    width: 100%;
+    width: 95%;
 
     display: flex;
     flex-direction: row;

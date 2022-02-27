@@ -6,7 +6,7 @@ import './CheckboxContainer.css'
 
 
 function CheckboxContainer({options, close, showing, productPicker}) {    
-    const [dropView, setDropView] = useState(false)
+    const [dropView, setDropView] = useState(true)
     const ref = useRef(null)
     
     
@@ -50,6 +50,7 @@ function CheckboxContainer({options, close, showing, productPicker}) {
                     
                 </div>
                 <div className='contentContainer optionBookings'>
+                    <h4 className='subtitle'>Reservas ({options.bookings.length})</h4>
                     {options.bookings.map((option,i) =>
                         <Checkbox key={i} productPicker={productPicker} option={{meta:'booking',data:option}} showing={showing.booking} />
                     )}

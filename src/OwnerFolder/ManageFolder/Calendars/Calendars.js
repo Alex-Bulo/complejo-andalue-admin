@@ -35,18 +35,19 @@ function Calendars({bookings}) {
     }
 
     const handleSlot = e => {
-        history.push({pathname:'/manage/bookings',state:{info:{startDate:moment(e.start).format('DD/MM/YYYY'),endDate:moment(e.end).subtract(1,'day').format('DD/MM/YYYY'), cabinID:null}}})
+        history.push({pathname:'/manage/bookings',state:{info:{startDate:moment(e.start).format('YYYY-MM-DD'),endDate:moment(e.end).subtract(1,'day').format('YYYY-MM-DD'), cabinID:null, cabin:null}}})
     }
 
     useEffect(()=>{
 
         const newInfo = bookings.map( booking =>{
-            
-            return { 
-                start: moment(booking.startDate).toDate(),
-                end: moment(booking.endDate).toDate(), 
-                title:`${booking.userName} - ${booking.cabin}`,
-                bookingInfo:booking
+            if(!booking.cancelled){
+                return { 
+                    start: moment(booking.startDate).toDate(),
+                    end: moment(booking.endDate).toDate(), 
+                    title:`${booking.userName} - ${booking.cabin}`,
+                    bookingInfo:booking
+                }
             }
         })
 

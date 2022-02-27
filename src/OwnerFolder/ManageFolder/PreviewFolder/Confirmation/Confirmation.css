@@ -1,0 +1,22 @@
+.Confirmation{
+    margin: 15px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+}
+
+.confirmation-title{
+    font-size: var(--mobile-fontSize-detail);
+    margin-right: 5px;
+}
+.confirmation-msg{
+    margin-left: 3px;
+}
+
+@media (min-width:721px) {
+    .Confirmation{
+        width: 50%;
+    }
+}

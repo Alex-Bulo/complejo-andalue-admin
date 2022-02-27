@@ -5,11 +5,14 @@ import './Checkbox.css'
 
 
 function Checkbox({option, productPicker, showing}) {
-    
+    const cabinHandler = (e) => {
+        e.stopPropagation()
+        productPicker({id:'cabin',pick: option.data.cabinID})
+    }
     return (
         <div className='Checkbox'>
             {option.meta === 'cabin' && <p 
-                    onClick={ () => productPicker({id:'cabin',pick: option.data.cabinID})} 
+                    onClick={cabinHandler} 
                     className={`Checkbox-content ${showing===option.data.cabin ? 'selected':''}`}>
                         {option.data.cabin}
                 </p>
@@ -17,7 +20,7 @@ function Checkbox({option, productPicker, showing}) {
             {option.meta === 'booking' && <p 
                     onClick={ () => productPicker({id:'booking',pick: option.data.code})} 
                     className='Checkbox-content'>
-                        {moment(option.data.startDate).format('DD/MM/YYYY')}: {option.data.cabin} - {option.data.code}
+                        {moment(option.data.startDate).format('DD/MM/YYYY')}: <span style={{color:'var(--fontColor-accent'}}>{option.data.userName} {option.data.userLastName}</span> - {option.data.cabin} 
                 </p>
             }
 

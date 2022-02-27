@@ -1,0 +1,28 @@
+.confirmation-content{
+    width: 100%;
+    margin-top: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+ }
+ .successContainer{
+     height: 325px;
+ }
+ .code{
+    margin: 10px 0; 
+    
+    text-align: left;
+ }
+ .code span{
+    color: var(--fontColor-accent);
+    font-weight: 500;
+}
+
+ @media (min-width:721px) {
+    .confirmation-content{
+        margin-left: 25px;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+}
