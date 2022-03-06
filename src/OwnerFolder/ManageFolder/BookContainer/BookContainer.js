@@ -209,7 +209,7 @@ function BookContainer(){
         })
         .then(response => {
             console.log(response);
-            if(response.ok){
+            if(response.ok || response.status === 400){
                 return response.json() 
             }else{
                 throw new Error (response)
@@ -220,7 +220,7 @@ function BookContainer(){
                 setInputControl(dbInfo.data)
                 actions.loading(false)
             }else{
-                console.log('HERE');
+                // console.log('HERE');
                 bookingInfo = dbInfo.data
                 // console.log(bookingInfo);
                 actions.success(bookingInfo)
@@ -228,7 +228,7 @@ function BookContainer(){
             }
         })
         .catch(err => console.log(err))
-        
+
     }
 
     return(
