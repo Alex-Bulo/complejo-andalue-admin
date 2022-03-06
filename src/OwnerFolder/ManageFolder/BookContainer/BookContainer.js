@@ -207,7 +207,13 @@ function BookContainer(){
             method:'POST',
             body:JSON.stringify(info)
         })
-        .then(response => response.json())
+        .then(response => {
+            if(response.ok){
+                return response.json() 
+            }else{
+                throw new Error (response.status)
+            }
+        })
         .then(dbInfo => {
             if(dbInfo.meta.status === 'error'){
                 setInputControl(dbInfo.data)
