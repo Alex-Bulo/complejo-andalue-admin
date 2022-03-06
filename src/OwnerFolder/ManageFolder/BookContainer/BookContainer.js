@@ -212,7 +212,7 @@ function BookContainer(){
             if(response.ok){
                 return response.json() 
             }else{
-                throw new Error (response.status)
+                throw new Error (response)
             }
         })
         .then(dbInfo => {
@@ -227,6 +227,7 @@ function BookContainer(){
                 actions.loading(false)
             }
         })
+        .catch(err => console.log(err))
     }
 
     return(
