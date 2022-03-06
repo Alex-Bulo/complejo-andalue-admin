@@ -208,6 +208,7 @@ function BookContainer(){
             body:JSON.stringify(info)
         })
         .then(response => {
+            console.log(response);
             if(response.ok){
                 return response.json() 
             }else{
