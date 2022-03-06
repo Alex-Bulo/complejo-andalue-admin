@@ -1,4 +1,4 @@
-export const APIDOMAIN = process.env.NODE_ENV ? 'https://andalue-kou8a.ondigitalocean.app/api' : 'http://localhost:3001/api' 
+export const APIDOMAIN = process.env.NODE_ENV ? 'https://andalue-kou8a.ondigitalocean.app/api/api' : 'http://localhost:3001/api' 
 
 export const links=[
     {name:'Administrar',to:'/manage/calendars',submenus:[
