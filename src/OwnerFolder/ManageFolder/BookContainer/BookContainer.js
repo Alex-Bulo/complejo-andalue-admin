@@ -184,27 +184,30 @@ function BookContainer(){
     const changeHandler = (input,newValue) => {
 
         const newInputs = inputControl.map(i => {
+            
             if(i.name === input){
                 i.type === 'number' ? i.value = Number(newValue) : i.value = newValue
-                validations(i,newValue)
-                
+                validations(i,newValue)                
+            }
+
+            if(inputControl[2].value !== '' && input === 'userName' || input === 'userLastName' || input === 'userPhone'  || input === 'userEmail'){
+                i.error = false
             }
               return i
-        })
-
-        //validate
-        
+        })        
         
         setInputControl(newInputs)
     }
 
     const submit = (info, actions) => {
         const action = info[0].value === '' ? 'new' : 'edit'
+        action === 'edit' && info.user !== '' && delete info.userEmail
+         
         let bookingInfo = {status:false}
 
         fetch(`${APIDOMAIN}/bookings/${action}`,{
             headers:{'Content-Type':'application/json'},
-            method:'POST',
+            method: action === 'new' ? 'POST' : 'PUT',
             body:JSON.stringify(info)
         })
         .then(response => {

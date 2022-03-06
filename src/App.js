@@ -8,6 +8,7 @@ import Atention from './AtentionFolder/At';
 
 function App() {
   const {preference} = useAuth()
+  console.log(process.env.NODE_ENV);
   return (
 
     <BrowserRouter>
